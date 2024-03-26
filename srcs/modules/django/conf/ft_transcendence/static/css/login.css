@@ -1,0 +1,127 @@
+.login_container {
+  max-width: 700px;
+  height: 340px;
+  margin: 200px auto;
+  padding: 30px;
+  background: var(--main-color);
+  box-shadow: 
+  -2px -2px 5px var(--fourth),
+  2px 2px 5px var(--fourth);
+  border-radius: 5px;
+}
+
+.login_container  #messageConnexion {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.login_container form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.login_container .input-box {
+  margin: 20px 0 20px 0;
+  width: calc(100% / 2 - 20px);
+}
+
+.login_container .input-box label {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.login_container  .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  padding-left: 15px;
+  font-size: 20px;
+  transition: all .2s;
+}
+
+.login_container .input-box input:focus {
+  border-color: var(--secondary); 
+}
+
+.login_container .submit {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+}
+
+.login_container .submit button {
+  width: 100%;
+  letter-spacing: 2px;
+  background: 
+  linear-gradient(135deg, var(--secondary-bg-color),  var(--main-bg-color)),
+  var(--main-bg-color);
+  color: white;
+  font-size: 1.3em;
+  font-weight: 900;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid var(--main-bg-color);
+  border-radius: 5px;
+  transition: all .3s;
+}
+
+.login_container .submit button:hover {
+  background: 
+  linear-gradient(135deg, rgba(0, 155, 217, 0.1), rgba(0, 155, 217, 0.4)),
+  white;
+  color: var(--main-bg-color);
+  cursor: pointer;
+}
+
+.login_container .submit p {
+  display: block;
+  height: 100%;
+  text-align: center;
+}
+
+.login_container .submit a {
+  font-weight: 700;
+}
+
+.login_container .submit a:hover {
+  text-decoration: underline;
+  color: var(--third) !important;
+}
+
+.login_container .TFA {
+  width: 100%;
+  margin: 20px auto;
+}
+
+@media (max-width: 800px) {
+  .login_container {
+    width: 400px;
+  }
+
+  .login_container form {
+    display: block;
+  }
+
+  .login_container .input-box {
+    width: 100%;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 470px) {
+  .login_container {
+    width: 300px;
+  }
+
+  .submit p:last-child {
+    display: flex;
+    flex-direction:  column;
+  }
+}

@@ -1,0 +1,9 @@
+.DS_Store
+sujet_transcendence.pdf
+.vscode
+mysite/
+__pycache__/
+*.pyc
+srcs/modules/django/conf/ft_transcendence/**/migrations/*.py
+chatApp.js
+.env

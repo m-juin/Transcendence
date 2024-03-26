@@ -1,0 +1,389 @@
+@import url('../assets/fonts/rajdhani/stylesheet.css');
+@import url('../assets/fonts/ostrich-sans-master/webfonts/ostrich-sans.css');
+@import url('color.css');
+
+* {
+  /* border: 1px solid red; */
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: rajdhaniregular;
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 1px;
+  opacity: 0;
+}
+
+::-webkit-scrollbar-track {
+  opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #BDBDBD;
+  border-radius: 10rem;
+  opacity: 0;
+}
+
+html {
+  color: white;
+  font-size: 20px;
+}
+
+body {
+  background:
+      linear-gradient(to bottom, var(--secondary-bg-color) 13%, var(--main-bg-color) 30%, var(--main-bg-color) 83%, var(--secondary-bg-color) 100%),
+      var(--secondary-bg-color);
+  background-repeat: no-repeat;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: white !important;
+  transition: all .3s ease-in-out;
+}
+
+a:hover {
+  color: var(--main-color) !important;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  padding: 20px 60px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  color: white;
+  background:
+  var(--secondary-bg-color);
+}
+
+.home_btn {
+  font-family: rajdhanibold;
+  font-size: 32px;
+  text-transform: lowercase;
+}
+
+.menu_btn {
+  display: none;
+  cursor: pointer;
+}
+
+nav {
+  width: auto;
+  display: grid;
+  grid-template-areas: "a b c d e";
+  grid-gap: 20px;
+  align-items: center;
+  justify-items: end;
+}
+
+nav a {
+  position: relative;
+  margin-right: 40px;
+  font-size: 22px;
+  font-weight: 700;
+  height: auto;
+}
+
+header nav a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--main-color);
+  color: white;
+  transition: .3s all ease-in-out;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+header a:visited {
+  color: white;
+}
+
+.profile_dropdown {
+  width: 100%;
+  position: relative;
+}
+
+.profile_button {
+  grid-area: e;
+  background: var(--main-color);
+  border-radius: 20px;
+  border: 2px solid var(--main-color);
+  width: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile_button img {
+  width: 1em;
+  height: 1em;
+  margin: 5px 10px;
+  transition: 0.3s ease;
+}
+
+.profile_button img:nth-child(2) {
+  display: none;
+}
+
+.profile_button a {
+  max-width: 190px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile_button:hover {
+  background: var(--main-bg-color);
+  border: 2px solid var(--fourth);
+  box-shadow:
+    2px 2px 10px var(--fourth)
+    -2px -2px 10px var(--fourth);
+  cursor: pointer;
+}
+
+.profile_button:hover img:nth-child(1) {
+  display: none;
+}
+
+.profile_button:hover img:nth-child(2) {
+  display: block;
+}
+
+.profile_button:hover a {
+  color: var(--fourth) !important;
+}
+
+.profile_button p::before {
+  display: none;
+}
+
+.profile_button.connected {
+  width: fit-content;
+}
+
+.profile_button.connected a {
+  text-transform: none;
+}
+
+#angle,
+#blue_angle {
+  display: none;
+}
+
+.profile_button.connected #angle {
+  display: block;
+}
+
+.profile_button.connected:hover #angle {
+  display: none;
+}
+
+.profile_button.connected:hover #blue_angle {
+  display: block;
+}
+
+.profile_menu {
+  position: absolute;
+  width: 200px;
+  list-style: none;
+  background: var(--main-color);
+  border-radius: 20px;
+  box-shadow: 2px 2px 8px 2x var(--main-color);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+nav .profile_menu {
+  top: 75px;
+}
+
+.dropdown_menu .profile_menu {
+  top: 220px;
+  left: 80px;
+  width: auto;
+}
+
+.profile_menu.active{
+  max-height: 500px;
+}
+
+.profile_menu li {
+  padding: .5rem  1rem .5rem 1rem;
+  text-align: center;
+}
+
+.profile_menu li a {
+  margin: auto;
+  font-size: 0.9em;
+  text-transform: capitalize;
+}
+
+.profile_menu li a:hover,
+.dropdown_menu .profile_menu li a:hover {
+  color: var(--main-bg-color) !important;
+}
+
+.profile_menu li a::before,
+.dropdown_menu .profile_menu li a::before {
+  background: var(--main-bg-color);
+}
+
+.profile_menu button {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 2px;
+  color: inherit;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-align: center;
+  transition: .3s ease;
+}
+
+.profile_menu button:hover {
+  background: var(--main-bg-color);
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  cursor: pointer;
+}
+
+#app {
+  min-height: 70%;
+}
+
+footer {
+  background:
+    var(--secondary-bg-color),
+    linear-gradient(to bottom, var(--main-bg-color) 0%, var(--secondary-bg-color) 50%);
+  height: 80px;
+  width: 100%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+}
+
+footer a {
+  font-weight: 700;
+  text-align: center;
+  margin: auto;
+}
+
+
+footer a::before {
+  content: '';
+  position: absolute;
+  top: 1.1em;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--main-color);
+  transition: .3s;
+}
+
+footer a:hover::before {
+  width: 100%;
+}
+
+.dropdown_menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 80px;
+  width: 100%;
+  height: 0;
+  background: rgba(41, 41, 41, 0.4);
+  backdrop-filter: blur(5px);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: height .2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.dropdown_menu.open {
+  height: 250px;
+  overflow: visible;
+}
+
+.dropdown_menu li {
+  margin: 10px;
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu li a {
+  transition: .3s ease;
+}
+
+.dropdown_menu li:hover a {
+  color: var(--main-color) !important;
+  text-decoration: underline;
+}
+
+.dropdown_menu .profile_menu li:hover a {
+  color: var(--main-bg-color) !important;
+}
+
+.dropdown_menu .profile_button p {
+  text-decoration: none;
+}
+
+@media(max-width: 1000px) {
+  nav {
+    display: none;
+  }
+
+  .menu_btn {
+    display: block;
+    height: 50px;
+  }
+
+  .dropdown_menu {
+    display: block;
+  }
+
+  .profile_button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile_dropdown .profile_menu {
+    position: unset;
+    margin: 10px auto;
+  }
+}
+
+@media(max-width: 450px) {
+  header {
+    padding: 20px 20px;
+  }
+
+  .menu_btn {
+    height: 30px
+  }
+
+  .dropdown_menu {
+    font-size: 0.8em;
+  }
+}

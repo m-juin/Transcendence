@@ -1,0 +1,80 @@
+.battleshipWindow {
+  margin-top: 80px;
+  height: fit-content;
+}
+
+.battleshipWindow .gameData {
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.battleshipWindow .gameType_wrapper {
+  display: flex;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 250px
+}
+
+.battleshipWindow .gameType_wrapper img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.battleshipWindow #gameType {
+	font-weight: bolder;
+  font-size: 3em;
+  height: 100%;
+  margin: auto;
+}
+
+.battleshipWindow .players_wrapper {
+	display: flex;
+	justify-content: space-around;
+  width: 600px;
+  margin: auto;
+  font-size: 1.5em;
+}
+
+.battleshipWindow .player_wrapper {
+  display: flex;
+  height: 60px;
+  border-bottom: 1px solid var(--fourth);
+}
+.battleshipWindow .players_wrapper p {
+  margin: auto;
+}
+.battleshipWindow .canvas_wrapper {
+	background-color: var(--fourth);
+  max-height: 900px;
+  padding: 1px;
+}
+
+.battleshipWindow #battleshipGame {
+	margin: 50px auto;
+	border: 4px solid var(--main-bg-color);
+	border-radius: 5px;
+}
+
+.battleshipWindow #ppPlayer1,
+.battleshipWindow  #ppPlayer2 {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+  margin: auto;
+}
+.battleshipWindow #ppPlayer1 {
+  margin-right: 10px;
+}
+.battleshipWindow #ppPlayer2 {
+  margin-left: 10px;
+}
+
+
+@media (max-width: 700px) {
+  .battleshipWindow .players_wrapper {
+    width: 300px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+  }
+}

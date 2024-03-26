@@ -1,0 +1,619 @@
+.dashboard {
+  position: relative;
+}
+
+.dashboard .boxTwoGame {
+	text-align: center;
+	justify-content: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px;
+	max-width: 500px;
+	width: 100%;
+	height: 75px;
+	margin: 50px auto 20px auto;
+  padding-top: 5px;
+}
+
+.dashboard .buttonGame {
+	background-color: transparent;
+	border: solid var(--fourth) 1px;
+	color: white;
+	font-size: 35px;
+	text-align: center;
+	height: 80px;
+	width: 95%;
+	margin: auto;
+	border-radius: 5px;
+	cursor: pointer;
+  transition: all .3s ease;
+}
+
+.dashboard .buttonGame:hover {
+	font-weight: bold;
+  box-shadow: 1px 1px 5px 3px var(--main-color), -1px -1px 5px 3px var(--main-color);
+}
+
+.dashboard .buttonGame:active {
+	font-weight: bold;
+	background-color: var(--fourth);
+}
+
+.dashboard .dashboard_wrapper {
+  background: var(--fourth);
+}
+.dashboard .dashboardInformation {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+  width: 1700px;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.dashboard h3 {
+  font-size: 1.3em;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.dashboard .results_wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.dashboard .classicMatchs_wrapper {
+	background:
+		linear-gradient(to bottom, var(--secondary-bg-color) 0%, var(--main-bg-color) 65%),
+		var(--main-bg-color);
+	border: 1px solid var(--fourth);
+	border-radius: 5px;
+	grid-column: 1 / 2;
+	margin-left: 3%;
+	height: 285px;
+}
+
+.dashboard .dash_classicMatchs ,
+.dashboard .dash_tournaments {
+  height: 100%
+}
+
+.dashboard #dash_listClassicMatch,
+.dashboard #dash_listTournaments {
+  height: 80%;
+	overflow-y: scroll;
+}
+
+.dashboard .dash_classicMatch,
+.dashboard .dash_tournament {
+	border-radius: 2px;
+	cursor: pointer;
+  margin: 0 5px;
+  padding: 5px;
+  font-size: 1.2em;
+  transition: .3s ease;
+}
+
+.dashboard .dash_classicMatch {
+  display: grid;
+  grid-template-areas: 'a b c d';
+}
+
+.dashboard .dash_tournament {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard .dash_classicMatch img,
+.dashboard .dash_tournament img {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+.dashboard .dash_classicMatch p {
+  text-align: center;
+}
+
+.dashboard .dash_classicMatch .players {
+  width: 340px;
+}
+
+.dashboard .dash_classicMatch .score {
+  width: 80px;
+}
+
+.dashboard .dash_classicMatch p:last-child {
+  text-align: end;
+  align-self: end;
+  width: 210px;
+}
+
+.dashboard .dash_classicMatch.win,
+.dashboard .dash_tournament.win {
+  background: linear-gradient(to bottom right, transparent 43%, #099709);
+}
+
+.dashboard .dash_classicMatch.lose,
+.dashboard .dash_tournament.lose {
+  background: linear-gradient(to bottom right, transparent 43%, #970000);
+}
+
+.dashboard .dash_classicMatch.win:hover,
+.dashboard .dash_tournament.win:hover {
+  box-shadow: 0px 1px 5px 1px #099709;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.dashboard .dash_classicMatch.lose:hover,
+.dashboard .dash_tournament.lose:hover {
+  box-shadow: 0px 1px 5px 1px #970000;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.dashboard .no_data {
+  text-align: center;
+  margin: 12% auto;
+  font-size: 2em;
+}
+.dashboard .tournaments_wrapper {
+	border: 1px solid var(--fourth);
+	background:
+		linear-gradient(to bottom, var(--secondary-bg-color) 0%, var(--main-bg-color) 65%),
+		var(--main-bg-color);
+	border-radius: 5px;
+	grid-column: 1 / 2;
+	margin-left: 3%;
+	height: 285px;
+}
+
+.dashboard .stats_wrapper {
+	border: 1px solid var(--fourth);
+	background:
+		linear-gradient(to bottom, var(--secondary-bg-color) 0%, var(--main-bg-color) 65%),
+		var(--main-bg-color);
+	border-radius: 5px;
+	grid-column: 2 / 2;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	margin-right: 3%;
+  height: 580px;
+}
+
+.dashboard .dash_stats {
+	display: grid;
+  grid-template-rows: 2fr 3fr;
+  grid-gap: 70px;
+}
+
+.dashboard .allStat {
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+  height: 162px;
+}
+
+.dashboard .allStat p {
+  margin-bottom: 5px;
+}
+
+.dashboard .gameStats,
+.dashboard .tournamentStats {
+  display: flex;
+  width: 255px;
+}
+
+.dashboard .piechartTournament ,
+.dashboard .piechartGame {
+	width: 100px;
+  height: 100px;
+	border-radius: 50%;
+	background-image: conic-gradient(green 180deg, red 0 180deg);
+}
+
+
+.dashboard .piechartStatGame ,
+.dashboard .piechartStatTournament {
+	font-size: 1em;
+  margin-left: 10px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.dashboard #classicGameStat {
+	color: white;
+}
+
+.dashboard #winGame {
+	color: green;
+}
+
+.dashboard #loseGame {
+	color: red;
+}
+
+.dashboard #classicTournamentStat {
+	color: white;
+}
+
+.dashboard #winTournament {
+	color: green;
+}
+
+.dashboard #loseTournament {
+	color: red;
+}
+
+.dashboard .otherStatLine {
+	columns: 2;
+  column-gap: 55px;
+	margin: auto 5%;
+  width: auto;
+}
+
+.dashboard .otherStatRow {
+	margin-bottom: 8%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard .otherStatRow p:last-child {
+  width: 95px;
+  text-align: end;
+  border-bottom: 1px solid var(--fourth);
+  align-self: center;
+}
+
+.dashboard .PopUp_wrapper {
+  display: none;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.dashboard .GameStatPopUp,
+.dashboard .TournamentStatPopUp{
+  display: none;
+  position: relative;
+  width: 700px;
+  height: fit-content;
+  margin-top: 100px;
+  background-color: var(--main-bg-color);
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px var(--fourth);
+  font-size: 1.5em;
+	text-align: center;
+}
+
+.dashboard #boxTime {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.dashboard #playerVs {
+  text-align: center;
+  display: grid;
+  grid-template-areas: 'a b c';
+  justify-content: center;
+  align-items: center;
+  margin: auto 5px;
+  grid-gap: 5%;
+}
+
+.dashboard #player_1_avatar ,
+.dashboard #player_2_avatar {
+  border-radius: 50%;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  transition: .3s ease;
+}
+
+.dashboard #player_1_avatar:hover ,
+.dashboard #player_2_avatar:hover {
+  box-shadow: 0 0 10px 5px var(--fourth);
+}
+
+.dashboard #playerVsText {
+  grid-area: b;
+}
+
+.dashboard #player1_name,
+.dashboard #player2_name {
+  word-wrap: break-word;
+}
+
+.players_score,
+.players_touched {
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	width: 300px;
+	margin: 25px auto;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, #6f58f0 6%, var(--fourth)) 1;
+}
+
+.dashboard #closePopUp {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.dashboard .tournament_name {
+	margin-bottom: -5px;
+}
+
+.dashboard #boxTimeTournament {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.dashboard #tournamentDescription {
+	margin: 20px auto;
+	font-size: 0.9em;
+}
+
+.dashboard .players_list_wrapper h4 {
+	margin-bottom: 20px;
+}
+
+.dashboard .players_list {
+	display: flex;
+	flex-wrap: wrap;
+	margin:  auto;
+	width: 560px;
+  overflow: scroll;
+}
+
+.dashboard .players_list li {
+	flex-basis: 50%;
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.dashboard .players_list li img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.dashboard .players_list li p {
+	margin: auto 0;
+  word-wrap: break-word;
+}
+
+.dashboard #winnerImageTournament {
+	margin: 30px auto;
+}
+
+
+.dashboard #winnerImageTournament img {
+	width: 130px;
+	height: auto;
+}
+
+.dashboard #tournamentWinner {
+  display: flex;
+  justify-content: space-evenly;
+	width: 300px;
+	margin: auto;
+}
+
+.dashboard #tournamentWinner img {
+	border-radius: 50%;
+	width: 80px;
+	height: auto;
+	cursor: pointer;
+}
+
+.dashboard #tournamentWinner p {
+	height: 100%;
+	margin: auto 0;
+}
+
+.dashboard #closeTournamentPopUp {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+@media (max-width: 1700px) {
+  .dashboard .dashboardInformation {
+    width: 1400px;
+  }
+
+  .dashboard .dash_stats {
+    grid-gap: unset;
+    grid-template-rows: auto;
+  }
+
+  .dash_stats .otherStat {
+    height: 50%;
+  }
+
+  .dash_stats .otherStatLine {
+    columns: unset;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    overflow: scroll;
+  }
+}
+
+@media (max-width: 1430px) {
+  .dashboard .dashboardInformation {
+    display: flex;
+    flex-direction: column;
+    width: 80%; 
+    margin: 20px auto;
+  }
+
+  .dashboard .results_wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .dashboard .classicMatchs_wrapper,
+  .dashboard .tournaments_wrapper {
+    grid-column: unset;
+    margin: auto;
+    width: 100%;
+  }
+
+  .dashboard .stats_wrapper {
+    margin: auto;
+    width: 100%;
+  }
+
+  .dashboard .otherStatLine {
+    columns: 2;
+    width: 80%;
+    height: auto;
+  }
+  
+  .dashboard  .dash_classicMatch {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .dashboard .dash_classicMatchs .dash_classicMatch * ,
+  .dashboard .dash_tournaments .dash_tournament * {
+    width: auto;
+    margin: auto 5px;
+  }
+
+  .dashboard .dash_classicMatchs .dash_classicMatch .players {
+    width: 200px;
+  }
+
+  .dashboard .dash_classicMatchs .dash_classicMatch .score {
+    width: 80px;
+  }
+
+  .dashboard .dash_classicMatchs .dash_classicMatch .timestamp {
+    width: 180px;
+  }
+
+  .dashboard .dash_tournaments .dash_tournament .tournament_result {
+    width: 220px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .dashboard .dashboardInformation {
+    display: block;
+  }
+
+  .dashboard .results_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .dashboard .GameStatPopUp,
+  .dashboard .TournamentStatPopUp {
+    margin: 100px 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .dashboard .gameStats,
+  .dashboard .tournamentStats {
+    flex-direction: column-reverse;
+  }
+
+  .dashboard .stats_wrapper {
+    height: fit-content;
+  }
+
+  .dashboard .dash_stats {
+    display: block;
+  }
+
+  .dashboard .allStat {
+    margin: 20px auto;
+    height: fit-content;
+  }
+
+  .dashboard .otherStat {
+    height: fit-content;
+  }
+
+  .dashboard .otherStatLine {
+    columns: unset;
+  }
+
+  .dashboard .gameStats .piechartGame,
+  .dashboard .tournamentStats .piechartTournament {
+    margin: auto;
+  }
+  
+  .dashboard .GameStatPopUp {
+    width: 90%;
+  }
+
+  .dashboard .GameStatPopUp #playerVsText {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dashboard .GameStatPopUp #player_1 *, 
+  .dashboard .GameStatPopUp #player_2 * {
+    margin: auto;
+  }
+
+  .dashboard .GameStatPopUp #player1_name,
+  .dashboard .GameStatPopUp #player2_name {
+    width: 100px;
+  }
+
+  .dashboard .TournamentStatPopUp .players_list {
+    flex-direction: column;
+  }
+
+  .dashboard .TournamentStatPopUp .players_list li {
+    margin-left: 20%;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard .TournamentStatPopUp {
+    width: 400px;
+  }
+}
+
+@media (max-width: 430px) {
+  .dashboard .dash_classicMatchs .dash_classicMatch .players {
+    width: 150px;
+  }
+
+  .dashboard .TournamentStatPopUp {
+    width: 300px;
+  }
+
+  .dashboard .TournamentStatPopUp .players_list li {
+    margin-left: 5%;
+  }
+}

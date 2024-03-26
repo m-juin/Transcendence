@@ -1,0 +1,108 @@
+services:
+  nginx:
+    build:
+      context: srcs/modules/nginx
+      dockerfile: Dockerfile
+    image: ft_transcendence_nginx:1.0
+    container_name: container_nginx
+    restart: on-failure
+    networks:
+      - transcendence_network
+    volumes:
+      - static_v:/home/app/web/static
+    ports:
+      - 443:443
+    depends_on:
+      - django
+
+  django:
+    build: srcs/modules/django
+    container_name: container_django
+    image: image_django
+    env_file:
+      - .env
+    environment:
+      - HostIp=${HOSTED}
+    networks:
+      - transcendence_network
+    restart: on-failure
+    volumes:
+      - db:/var/db
+      - django_v:/var/conf
+      - blockchain:/var/blockchain
+    ports:
+      - 8000
+
+  postgresql:
+    build: srcs/modules/postgresql
+    container_name: container_postgresql
+    image: image_postgresql
+    env_file:
+      - .env
+    networks:
+      - transcendence_network
+    restart: on-failure
+    volumes:
+      - db:/var/db
+    ports:
+      - "5432"
+
+  ganache:
+   build: srcs/modules/blockchain/ganache
+   container_name: container_ganache
+   image: image_ganache
+   env_file:
+     - .env
+   networks:
+     - transcendence_network
+   volumes:
+     - blockchain:/var/blockchain
+   restart: on-failure
+   expose:
+     - "8545"
+
+  contract_deployement:
+   build: srcs/modules/blockchain/contract_deployement
+   container_name: container_contract_deployement
+   image: image_contract_deployement
+   env_file:
+     - .env
+   networks:
+     - transcendence_network
+   volumes:
+     - blockchain:/var/blockchain
+   restart: on-failure
+   depends_on:
+     - ganache
+   expose:
+     - "8545"
+
+volumes:
+  django_v:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: 'srcs/modules/django/conf'
+  blockchain:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '~/data/blockchain'
+  db:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '~/data/db'
+  static_v:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: 'srcs/modules/django/conf/ft_transcendence/static'
+
+networks:
+  transcendence_network:
+    driver: bridge

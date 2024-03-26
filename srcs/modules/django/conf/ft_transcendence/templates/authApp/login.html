@@ -1,0 +1,25 @@
+<!-- authApp/login.html -->
+{% load static %}
+<script type="module" src="{% static '/js/loading.js' %}"></script>
+<script type="module" src="{% static '/js/authApp.js' %}"></script>
+{% block content %}
+  <section class="login_container">
+    <h1 id="messageConnexion">Log In</h1>
+    <form>
+      {% csrf_token %}
+      <div class="input-box">
+        <label for="Input_usr">Mail:</label>
+        <input type="text" id="Input_mail" required placeholder="Mail" pattern="\S.*">
+      </div>
+      <div class="input-box">
+        <label for="Input_pwd">Password:</label>
+        <input type="password" id="Input_pwd" required placeholder="Password" pattern="\S.*">
+      </div>
+    </form>
+    <div class="submit">
+      <button class="submit_BTN">Submit</button>
+      <p class="feedback"></p>
+      <p>Don't have an account ? <a href="/authApp/register" data-link>Join us !</a></p>
+    </div>
+  </section>
+{% endblock content %}

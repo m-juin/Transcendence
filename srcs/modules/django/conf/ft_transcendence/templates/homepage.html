@@ -1,0 +1,111 @@
+<!-- homepage html -->
+{% load static %}
+<script type="module" src="{% static '/js/loading.js' %}"></script>
+<script type="module" src="{% static '/js/authApp.js' %}"></script>
+{% block content %}
+<section class="hero">
+  <div id="catchphrase">
+    <img id="paddle" src="../static/assets/logo/ping-pong.png" alt="Ping pong paddles illustrations">
+    <div>
+      <h2>Strategy at sea, Skills with the racket</h2>
+      <p>Enjoy the experience of classical games !</p>
+      <p>Challenge the world and show your skills !</p>
+    </div>
+  </div>
+  <div id="login-signin">
+    <div>
+      <button name="LogIn">Log in</button>
+      <button name="SignIn">Sign in</button>
+    </div>
+    <img id="boat" src="../static/assets/logo/battleship.png" alt="Battleshipi llustrations">
+  </div>
+  <div class='popup'>
+    <p>You are already logged in</p>
+  </div>
+</section>
+<section class="games">
+  <h1>Play traditional games brought up to date</h1>
+  <div class="pong_pres game_wrapper">
+    <div>
+      <h2>Pong</h2>
+      <p>
+      Immerse yourself in the next-level challenge of 3D Pong, where classic gameplay meets dynamic three-dimensional graphics, testing your reflexes and strategy in thrilling matches.
+      </p>
+    </div>
+    <img src="../static/assets/pictures/pong_pic.png" alt="Pong game illustration" />
+  </div>
+  <div class="battleship_pres game_wrapper">
+    <img src="../static/assets/pictures/battle_pic.png" alt="Battleship game illustration"  />
+    <div>
+      <h2>Battleship</h2>
+      <p>
+      Experience the beloved tabletop classic in a whole new dimension with our immersive 3D Battleship game, where you'll strategically deploy your fleet and engage in thrilling naval warfare against opponents worldwide.
+      </p>
+    </div>
+  </div>
+  <div class="tournament_pres game_wrapper">
+    <div>
+      <h2>Tournaments</h2>
+      <p>
+      Join the ultimate gaming showdown with our tournament featuring classic favorites Pong and Battleship, where players test their skills in intense matches of precision and strategy.
+      </p>
+    </div>
+    <img src="/static/assets/pictures/tournament_pic.png" alt="Tournaments illustration">
+  </div>
+</section>
+<section class="about">
+  <div class="presentation">
+    <p>
+    This project was made as part of the <a href="https://42angouleme.fr/">Angouleme 42 School</a>.</p>
+    <p>
+    The objective was to design website hosting multiplayer
+    Pong game as Single Page Application.</p>
+    <p>
+    It was developped using <strong>HTML</strong>, <strong>CSS</strong> and vanilla <strong>JS</strong> for the front
+    end, and <strong>Django</strong> and <strong>PostgreSQL</strong> for the backend.
+    </p>
+  </div>
+  <div class="bio_wrapper">
+    <div class="bio">
+      <div class='member'>
+        <img src="../static/assets/pictures/studs/fle-tolg2.jpg" alt="Felix Le Tolguenec picture">
+        <p>Felix Le Tolguenec</p>
+      </div>
+      <ul>
+        <li><a href="https://github.com/polar-42"><img src="../static/assets/logo/github.png" alt="Link to Github page"></a></li>
+        <li><a href='https://www.linkedin.com/in/f%C3%A9lix-le-tolguenec-90076b21b/'><img src="../static/assets/logo/linkedin.png" alt="Link to Linkedin page"></a></li>
+      </ul>
+    </div>
+    <div class="bio">
+      <div class='member'>
+        <img src="../static/assets/pictures/studs/gpasquet3.jpg" alt="Gillian Pasquette picture">
+        <p>Gillian Pasquette</p>
+      </div>
+      <ul>
+        <li><a href="https://github.com/GreenPG"><img src="../static/assets/logo/github.png" alt="Link to Github page"></a></li>
+        <li><a href="https://www.linkedin.com/in/gillian-pasquette/"><img src="../static/assets/logo/linkedin.png" alt="Link to Linkedin page"></a></li>
+      </ul>
+    </div>
+    <div class="bio">
+      <div class='member'>
+        <img src="../static/assets/pictures/studs/mjuin2.jpg" alt="Mickaël Juin picture" />
+        <p>Mickaël Juin</p>
+      </div>
+      <ul>
+        <li><a href="https://github.com/m-juin"><img src="../static/assets/logo/github.png" alt="Link to Github page" /></a></li>
+        <li><a href='https://www.linkedin.com/in/mickael-juin16/'><img src="../static/assets/logo/linkedin.png" alt="Link to Linkedin page" /></a></li>
+      </ul>
+    </div>
+    <div class="bio">
+      <div class='member'>
+        <img src="../static/assets/pictures/studs/gtouzali.jpg" alt="Gabriel Touzalin picture" />
+        <p>Gabriel Touzalin</p>
+      </div>
+      <ul>
+        <li><a href="https://github.com/TheEmperorPenguin"><img src="../static/assets/logo/github.png" alt="Link to Github page" /></a></li>
+        <li><a href='https://www.linkedin.com/in/gabrieltouzalin/'><img src="../static/assets/logo/linkedin.png" alt="Link to Linkedin page" /></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}
