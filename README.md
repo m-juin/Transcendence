@@ -23,7 +23,7 @@ This is a student project and was not intended to be put on line. This is the re
 
 ## Usage
 The site can be launched either with ```make``` or ```docker-compose up --build```
-You can the connect on https://localhost or https://<host ip>
+You can the connect on https://localhost or https://*host ip*
 
 ## Content
 The subject requested to follow a mandatory and let the choice between a list modules for the rest of the proejct.  
